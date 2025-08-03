@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Happy Friendship Day 2025 🎉</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background: linear-gradient(135deg, #ffe2f3, #e0f7fa);
+      font-family: 'Segoe UI', sans-serif;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      overflow: hidden;
+      text-align: center;
+    }
+
+    .container {
+      max-width: 700px;
+      padding: 40px;
+      background: white;
+      border-radius: 20px;
+      box-shadow: 0 12px 30px rgba(0, 0, 0, 0.1);
+      position: relative;
+    }
+
+    h1 {
+      font-size: 2.5rem;
+      background: linear-gradient(to right, #ff4081, #7c4dff);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      margin-bottom: 20px;
+    }
+
+    #message {
+      font-size: 1.2rem;
+      color: #333;
+      min-height: 80px;
+    }
+
+    .confetti {
+      position: absolute;
+      width: 10px;
+      height: 10px;
+      background: #ffc107;
+      top: 0;
+      animation: fall 3s linear infinite;
+      opacity: 0.8;
+    }
+
+    @keyframes fall {
+      0% {
+        transform: translateY(-10px) rotate(0deg);
+      }
+      100% {
+        transform: translateY(100vh) rotate(360deg);
+      }
+    }
+
+    footer {
+      margin-top: 20px;
+      font-size: 0.9rem;
+      color: #888;
+    }
+
+    @media (max-width: 600px) {
+      .container {
+        margin: 20px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>💖 Happy Friendship Day 2025 💖</h1>
+    <div id="message"></div>
+    <footer>— With warmth and gratitude 🌟</footer>
+  </div>
+
+  <script>
+    const messageText = `To all the bonds we've built, and those yet to come — Happy Friendship Day 2025! 💖 
+May your life be filled with kindness, connection, and beautiful surprises. 🌸🫶`;
+
+    const msgEl = document.getElementById("message");
+    let idx = 0;
+
+    function typeWriter() {
+      if (idx < messageText.length) {
+        msgEl.innerHTML += messageText.charAt(idx);
+        idx++;
+        setTimeout(typeWriter, 40);
+      }
+    }
+
+    typeWriter();
+
+    // Confetti generator
+    for (let i = 0; i < 40; i++) {
+      const confetti = document.createElement("div");
+      confetti.classList.add("confetti");
+      confetti.style.left = `${Math.random() * 100}%`;
+      confetti.style.backgroundColor = `hsl(${Math.random() * 360}, 70%, 60%)`;
+      confetti.style.animationDuration = `${2 + Math.random() * 2}s`;
+      confetti.style.animationDelay = `${Math.random()}s`;
+      confetti.style.borderRadius = Math.random() > 0.5 ? "50%" : "0";
+      document.body.appendChild(confetti);
+    }
+  </script>
+</body>
+</html>
